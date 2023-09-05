@@ -1,46 +1,41 @@
+/* Base styles for all devices */
+
 body {
+    background-color: #37474F;
+    min-height: 100vh;
+    min-height: 100vh;
     margin: 0;
     width: 100%;
-    height: 100%;
-    background: url('../assets/Background.jpg') no-repeat;
+    min-height: 100vh; /* Garante uma altura mínima da viewport */
     position: absolute;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-size: 16px; 
 }
 
-body.light{
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/bg-desktop-light.jpg') no-repeat;
-    position: absolute;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+body.light {
+    background-color: #9E9E9E;
+    min-height: 100vh;
+    min-height: 100vh;
 }
+/* O restante do seu código permanece o mesmo */
 
-body.light span {
+
+/* Estilos para o modo claro */
+body.light span,
+body.light h3,
+body.light a {
     color: black;
 }
 
-body.light h3 {
-    color: black;   
-}
-
-body.light a {
-    text-decoration: none;
-    color: black;   
-}
-
-body.light #linkFor button{
+body.light #linkFor button {
     border: 1px solid black;
     color: black;
 }
 
-body.light #avatar{
+body.light #avatar {
     border: 1px solid black;
 }
 
@@ -48,17 +43,13 @@ body.light #icon {
     filter: invert(1);
 }
 
-
-
 #avatar {
-    border-radius: 100px;
+    border-radius: 50%; /* Use valor relativo para arredondamento responsivo */
     border: 1px solid white;
     width: 112px;
-    height: 111px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+    height: 112px;
+    max-width: 100%; /* Garante que não exceda a largura do container */
+    margin: 10px auto; /* Centraliza horizontalmente */
 }
 
 header {
@@ -72,11 +63,8 @@ header {
 
 #switchButton {
     width: 100px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 20px auto; /* Espaço (gap) de 20px acima e abaixo e centralizado horizontalmente */
+    max-width: 100%; /* Garante que não exceda a largura do container */
+    margin: 20px auto; /* Centraliza horizontalmente */
 }
 
 #profileLinkTree {
@@ -87,32 +75,30 @@ header {
     flex-direction: column;
     margin-top: 21px;
 }
-#linkFor button{
-    width: 430px;
+
+#linkFor button {
+    width: 430px; /* Largura total para todos os tamanhos de tela */
+    max-width: 430px; /* Limita a largura máxima para telas maiores */
     height: 46px;
     border-radius: 16px;
-    border: 1px solid white ;
+    border: 1px solid white;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     margin: 10px auto;
-    padding: .7rem; 
+    padding: .7rem;
     background-color: rgba(176, 177, 157, 0.3);
-    align-items: center;
     color: white;
     cursor: pointer;
- }
+}
 
- h3 {
+h3 {
     color: white;
- }
+}
 
 #linkFor img {
     text-align: center;
     justify-content: center;
     align-items: center;
-    display: flexx; 
+    display: flex;
     flex-direction: column;
     color: white;
     margin-top: 7px;
@@ -128,49 +114,77 @@ span {
 }
 
 label {
-	position: relative;
-	width: 53px;
-	height: 34px;
-	background: #666666;
-	border-radius: 30px;
-	cursor: pointer;
-	transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-webkit-transition: all 0.3s;
+    position: relative;
+    width: 53px;
+    height: 34px;
+    background: #666666;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
     text-align: center;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
     margin: 20px auto; /* Espaço (gap) de 20px acima e abaixo e centralizado horizontalmente */
 }
 
-	
 label:after {
-	content: "";
-	position: absolute;
-	left: 2px;
-	top: 2px;
-	width: 30px;
-	height: 30pX;
-	background: #FFF;
-	border-radius: 50%;
-	box-shadow: 1px 3px 6px #666666;
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 30px;
+    height: 30px;
+    background: #FFF;
+    border-radius: 50%;
+    box-shadow: 1px 3px 6px #666666;
 }
 
 input:checked + label {
-	background: #009900;
+    background: #009900;
 }
+
 input:checked + label:after {
-	left: auto;
-	right: 2px;
+    left: auto;
+    right: 2px;
 }
 
 a {
     text-decoration: none;
 }
 
+#linkFor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+}
 
+#icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 10px auto;
+}
 
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Diminui o tamanho da fonte para telas menores */
+    }
 
+    #avatar {
+        width: 80px; /* Diminui o tamanho do avatar para telas menores */
+        height: 80px;
+    }
 
-	
+    #linkFor button {
+        max-width: 80%; /* Ajusta a largura para o tamanho selecionado */
+    }
+}
+/* Base styles for all devices */
