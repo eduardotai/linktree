@@ -165,7 +165,9 @@ input:checked + label:after {
 	right: 2px;
 }
 
-
+a {
+    text-decoration: none;
+}
 
 
 
