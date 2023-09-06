@@ -1,67 +1,41 @@
-/* Base styles for all devices */
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-    height: 100%; /* Defina a altura de html e body como 100% */
+    height: 100%;
 }
 
 body {
- width: 100%;
-  height: 100vh;
-  background: url('./assets/bg-desktop.jpg') no-repeat center center/cover;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-    font-size: 16px; 
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: url('./assets/bg-desktop.jpg') no-repeat center top;
+    background-size: cover;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-attachment: fixed;
 }
 
 body.light {
-         width: 100%;
-  height: 100%;
-  background: url('./assets/bg-desktop-light.jpg') no-repeat center center/cover;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-     font-size: 16px; 
-}
-
-/* Estilos para o modo claro */
-body.light span,
-body.light h3,
-body.light a {
-    color: black;
-}
-
-body.light #linkFor button {
-    border: 1px solid black;
-    color: black;
-}
-
-body.light #avatar {
-    border: 1px solid black;
-}
-
-body.light #icon {
-    filter: invert(1);
+    background: url('./assets/bg-desktop-light.jpg') no-repeat center top;
+    background-size: cover;
+    font-size: 16px;
 }
 
 #avatar {
-    border-radius: 50%; /* Use valor relativo para arredondamento responsivo */
+    border-radius: 50%;
     border: 1px solid white;
     width: 112px;
     height: 112px;
-    max-width: 100%; /* Garante que não exceda a largura do container */
-    margin: 10px auto; /* Centraliza horizontalmente */
+    max-width: 100%;
+    margin: 10px auto;
 }
-
 header {
     width: 100%;
     text-align: center;
@@ -73,8 +47,8 @@ header {
 
 #switchButton {
     width: 100px;
-    max-width: 100%; /* Garante que não exceda a largura do container */
-    margin: 20px auto; /* Centraliza horizontalmente */
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 #profileLinkTree {
@@ -87,8 +61,8 @@ header {
 }
 
 #linkFor button {
-    width: 430px; /* Largura total para todos os tamanhos de tela */
-    max-width: 430px; /* Limita a largura máxima para telas maiores */
+    width: 430px;
+    max-width: 100%;
     height: 46px;
     border-radius: 16px;
     border: 1px solid white;
@@ -137,7 +111,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto; /* Espaço (gap) de 20px acima e abaixo e centralizado horizontalmente */
+    margin: 20px auto;
 }
 
 label:after {
@@ -185,16 +159,38 @@ a {
 
 @media (max-width: 768px) {
     body {
-        font-size: 14px; /* Diminui o tamanho da fonte para telas menores */
+        font-size: 14px;
     }
 
     #avatar {
-        width: 80px; /* Diminui o tamanho do avatar para telas menores */
+        width: 80px;
         height: 80px;
     }
 
     #linkFor button {
-        max-width: 80%; /* Ajusta a largura para o tamanho selecionado */
+        max-width: 80%;
     }
 }
-/* Base styles for all devices */
+
+@media (min-width: 1200px) {
+    body {
+        font-size: 24px;
+    }
+
+    #avatar {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (min-width: 400%) {
+    body,
+    body.light {
+        background-size: cover;
+    }
+}
+
+
+
+
+
