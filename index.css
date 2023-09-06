@@ -26,6 +26,9 @@ body.light {
     background: url('./assets/bg-desktop-light.jpg') no-repeat center top;
     background-size: cover;
     font-size: 16px;
+    min-height: 100vh;
+    background-attachment: fixed;
+
 }
 
 #avatar {
